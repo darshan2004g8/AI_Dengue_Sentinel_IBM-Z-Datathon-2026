@@ -1,0 +1,22 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+.venv/
+venv/
+ENV/
+env/
+
+# Raw large files per SPEC.md Section 11
+data/raw/*
+!data/raw/.gitkeep
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# IDEs
+.idea/
+.vscode/
