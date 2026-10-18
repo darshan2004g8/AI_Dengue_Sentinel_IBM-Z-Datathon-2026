@@ -1,0 +1,276 @@
+{
+  "E1_held_out_test": {
+    "Baseline A (Persistence)": {
+      "lead_time_days_mean": 19.4,
+      "lead_time_95_ci": [
+        18.9,
+        20.1
+      ],
+      "recall_mean": 0.983,
+      "precision_mean": 0.207,
+      "false_alerts_per_100_ww_mean": 29.36,
+      "pr_auc_mean": 0.045,
+      "brier_score_mean": 0.2903
+    },
+    "Baseline B (Rolling Z-Score)": {
+      "lead_time_days_mean": 14.0,
+      "lead_time_95_ci": [
+        7.0,
+        21.0
+      ],
+      "recall_mean": 0.295,
+      "precision_mean": 0.097,
+      "false_alerts_per_100_ww_mean": 41.96,
+      "pr_auc_mean": 0.03,
+      "brier_score_mean": 0.0691
+    },
+    "Calibrated XGBoost (Full)": {
+      "lead_time_days_mean": 13.7,
+      "lead_time_95_ci": [
+        12.0,
+        15.3
+      ],
+      "recall_mean": 0.608,
+      "precision_mean": 0.456,
+      "false_alerts_per_100_ww_mean": 0.91,
+      "pr_auc_mean": 0.087,
+      "brier_score_mean": 0.0279
+    },
+    "Calibrated XGBoost (No Weather)": {
+      "lead_time_days_mean": 9.1,
+      "lead_time_95_ci": [
+        3.8,
+        14.3
+      ],
+      "recall_mean": 0.379,
+      "precision_mean": 0.33,
+      "false_alerts_per_100_ww_mean": 1.04,
+      "pr_auc_mean": 0.077,
+      "brier_score_mean": 0.0281
+    },
+    "no_skill_baseline": 0.03
+  },
+  "E2_replay_season": {
+    "days_earlier": 16.846153846153847,
+    "official_detection_date": "2024-06-01",
+    "sentinel_detection_date": "2024-06-24",
+    "outbreak_recall": 0.8125,
+    "ward_day_precision": 0.8,
+    "false_alarm_share": 0.19999999999999996,
+    "false_alerts_per_100_ward_weeks": 0.31343283582089554,
+    "total_alerts": 15,
+    "true_alerts": 12,
+    "false_alerts": 3,
+    "total_onsets": 16,
+    "detected_onsets": 13,
+    "brier_score": 0.029909127113355374,
+    "pr_auc": 0.19864881664335637,
+    "outbreak_details": [
+      {
+        "ward": "W022",
+        "true_onset_date": "2024-07-06",
+        "first_alert_date": "2024-07-02",
+        "alert_origin_ward": "W132",
+        "is_true_alert": true,
+        "lead_time_days": 11,
+        "status": "Detected"
+      },
+      {
+        "ward": "W132",
+        "true_onset_date": "2024-07-06",
+        "first_alert_date": "2024-06-24",
+        "alert_origin_ward": "W123",
+        "is_true_alert": true,
+        "lead_time_days": 19,
+        "status": "Detected"
+      },
+      {
+        "ward": "W063",
+        "true_onset_date": "2024-07-08",
+        "first_alert_date": "2024-06-24",
+        "alert_origin_ward": "W123",
+        "is_true_alert": true,
+        "lead_time_days": 21,
+        "status": "Detected"
+      },
+      {
+        "ward": "W191",
+        "true_onset_date": "2024-07-08",
+        "first_alert_date": "2024-06-28",
+        "alert_origin_ward": "W191",
+        "is_true_alert": true,
+        "lead_time_days": 17,
+        "status": "Detected"
+      },
+      {
+        "ward": "W055",
+        "true_onset_date": "2024-07-09",
+        "first_alert_date": "2024-06-27",
+        "alert_origin_ward": "W123",
+        "is_true_alert": true,
+        "lead_time_days": 19,
+        "status": "Detected"
+      },
+      {
+        "ward": "W145",
+        "true_onset_date": "2024-07-09",
+        "first_alert_date": "2024-06-27",
+        "alert_origin_ward": "W123",
+        "is_true_alert": true,
+        "lead_time_days": 19,
+        "status": "Detected"
+      },
+      {
+        "ward": "W009",
+        "true_onset_date": "2024-07-14",
+        "first_alert_date": "2024-07-10",
+        "alert_origin_ward": "W063",
+        "is_true_alert": true,
+        "lead_time_days": 11,
+        "status": "Detected"
+      },
+      {
+        "ward": "W184",
+        "true_onset_date": "2024-07-16",
+        "first_alert_date": "2024-07-09",
+        "alert_origin_ward": "W184",
+        "is_true_alert": true,
+        "lead_time_days": 14,
+        "status": "Detected"
+      },
+      {
+        "ward": "W017",
+        "true_onset_date": "2024-07-18",
+        "first_alert_date": "2024-07-09",
+        "alert_origin_ward": "W022",
+        "is_true_alert": true,
+        "lead_time_days": 16,
+        "status": "Detected"
+      },
+      {
+        "ward": "W114",
+        "true_onset_date": "2024-07-28",
+        "first_alert_date": "2024-07-20",
+        "alert_origin_ward": "W171",
+        "is_true_alert": true,
+        "lead_time_days": 15,
+        "status": "Detected"
+      },
+      {
+        "ward": "W171",
+        "true_onset_date": "2024-07-31",
+        "first_alert_date": "2024-07-20",
+        "alert_origin_ward": "W171",
+        "is_true_alert": true,
+        "lead_time_days": 18,
+        "status": "Detected"
+      },
+      {
+        "ward": "W174",
+        "true_onset_date": "2024-07-31",
+        "first_alert_date": "2024-07-20",
+        "alert_origin_ward": "W171",
+        "is_true_alert": true,
+        "lead_time_days": 18,
+        "status": "Detected"
+      },
+      {
+        "ward": "W119",
+        "true_onset_date": "2024-08-03",
+        "first_alert_date": "2024-07-20",
+        "alert_origin_ward": "W171",
+        "is_true_alert": true,
+        "lead_time_days": 21,
+        "status": "Detected"
+      },
+      {
+        "ward": "W221",
+        "true_onset_date": "2024-08-04",
+        "first_alert_date": "None",
+        "alert_origin_ward": "None",
+        "is_true_alert": false,
+        "lead_time_days": null,
+        "status": "Missed"
+      },
+      {
+        "ward": "W123",
+        "true_onset_date": "2024-08-15",
+        "first_alert_date": "None",
+        "alert_origin_ward": "None",
+        "is_true_alert": false,
+        "lead_time_days": null,
+        "status": "Missed"
+      },
+      {
+        "ward": "W132",
+        "true_onset_date": "2024-08-20",
+        "first_alert_date": "None",
+        "alert_origin_ward": "None",
+        "is_true_alert": false,
+        "lead_time_days": null,
+        "status": "Missed"
+      }
+    ]
+  },
+  "E3_ablations": {
+    "no_calendar": {
+      "lead_time_mean": 9.7,
+      "recall_mean": 0.259,
+      "precision_mean": 0.469,
+      "false_alerts_per_100_ww_mean": 0.35,
+      "pr_auc_mean": 0.087,
+      "replay_lead_time": 14.0,
+      "replay_days_before_onset": 7.0,
+      "replay_recall": 0.062,
+      "replay_precision": 0.5,
+      "replay_false_alerts_per_100_ww": 0.1,
+      "replay_pr_auc": 0.151
+    },
+    "no_weather": {
+      "lead_time_mean": 9.1,
+      "recall_mean": 0.379,
+      "precision_mean": 0.33,
+      "false_alerts_per_100_ww_mean": 1.04,
+      "pr_auc_mean": 0.077
+    },
+    "no_clinic": {
+      "lead_time_mean": 0.0,
+      "recall_mean": 0.0,
+      "precision_mean": null,
+      "false_alerts_per_100_ww_mean": 0.0,
+      "pr_auc_mean": 0.077
+    },
+    "no_pharmacy": {
+      "lead_time_mean": 0.0,
+      "recall_mean": 0.0,
+      "precision_mean": null,
+      "false_alerts_per_100_ww_mean": 0.0,
+      "pr_auc_mean": 0.074
+    }
+  },
+  "E4_delay_sensitivity": {
+    "7_days": {
+      "reporting_delay_days": 7,
+      "lead_time_gain_mean": 13.7
+    },
+    "10_days": {
+      "reporting_delay_days": 10,
+      "lead_time_gain_mean": 16.7
+    },
+    "14_days": {
+      "reporting_delay_days": 14,
+      "lead_time_gain_mean": 20.7
+    }
+  },
+  "E5_control_seasons": {
+    "control_seasons_count": 5,
+    "false_alerts_per_100_ww_mean": 0.36,
+    "target_max_budget": 5.0,
+    "meets_budget": true
+  },
+  "E6_calibration": {
+    "raw_xgboost_brier": 0.171,
+    "isotonic_calibrated_brier": 0.0279,
+    "brier_error_reduction_pct": 83.7
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "metadata": {
+    "platform_label": "local",
+    "os": "Windows-11-10.0.26200-SP0",
+    "arch": "AMD64",
+    "cpu_model": "Intel64 Family 6 Model 126 Stepping 5, GenuineIntel",
+    "cpu_logical_cores": 8,
+    "cpu_physical_cores": 4,
+    "ram_gb": 7.75,
+    "python_version": "3.13.7",
+    "git_commit": "8dc2db5",
+    "libraries": {
+      "xgboost": "3.4.1",
+      "onnxruntime": "1.31.0",
+      "scikit-learn": "1.7.2",
+      "numpy": "2.3.5",
+      "pandas": "3.0.6",
+      "psutil": "7.2.2"
+    }
+  },
+  "throughput": {
+    "n_events": 100000,
+    "n_trials": 3,
+    "median_elapsed_sec": 0.0766,
+    "events_per_second": 1306098.6,
+    "all_trial_durations_sec": [
+      0.0858,
+      0.0738,
+      0.0766
+    ]
+  },
+  "controlled_latency": {
+    "target_rate_events_per_sec": 5000,
+    "n_samples": 10000,
+    "p50_ms": 0.0019,
+    "p95_ms": 0.0057,
+    "p99_ms": 0.0315
+  },
+  "backend_comparison": {
+    "native_xgboost": {
+      "1": {
+        "median_latency_ms": 1.09,
+        "throughput_rows_per_sec": 917.7
+      },
+      "100": {
+        "median_latency_ms": 1.302,
+        "throughput_rows_per_sec": 76793.1
+      },
+      "1000": {
+        "median_latency_ms": 1.891,
+        "throughput_rows_per_sec": 528932.6
+      },
+      "10000": {
+        "median_latency_ms": 8.501,
+        "throughput_rows_per_sec": 1176332.2
+      },
+      "100000": {
+        "median_latency_ms": 53.613,
+        "throughput_rows_per_sec": 1865208.8
+      }
+    },
+    "onnxruntime": {
+      "1": {
+        "median_latency_ms": 0.05,
+        "throughput_rows_per_sec": 20080.4
+      },
+      "100": {
+        "median_latency_ms": 0.208,
+        "throughput_rows_per_sec": 480077.2
+      },
+      "1000": {
+        "median_latency_ms": 1.844,
+        "throughput_rows_per_sec": 542240.6
+      },
+      "10000": {
+        "median_latency_ms": 21.625,
+        "throughput_rows_per_sec": 462429.9
+      },
+      "100000": {
+        "median_latency_ms": 202.764,
+        "throughput_rows_per_sec": 493185.2
+      }
+    },
+    "snap_ml": "Not installed / unavailable in current environment (optional on LinuxONE VM per BUILD.md Section 4)"
+  },
+  "scale_test": {
+    "sustainable_cities_under_1s_sla": 100,
+    "cities_per_node_arithmetic": "events/s per city = wards (20) x signals per ward (5) x events per signal per minute (1) / 60 = 1.67 events/s. At 100 cities: 167 events/s.",
+    "latencies_by_city_count": {
+      "1": {
+        "virtual_cities": 1,
+        "total_wards": 20,
+        "p50_tick_latency_ms": 0.21,
+        "p95_tick_latency_ms": 0.45,
+        "p99_tick_latency_ms": 0.79,
+        "meets_1s_sla": true,
+        "events_per_sec": 1.67
+      },
+      "10": {
+        "virtual_cities": 10,
+        "total_wards": 200,
+        "p50_tick_latency_ms": 0.44,
+        "p95_tick_latency_ms": 0.84,
+        "p99_tick_latency_ms": 1.1,
+        "meets_1s_sla": true,
+        "events_per_sec": 16.67
+      },
+      "50": {
+        "virtual_cities": 50,
+        "total_wards": 1000,
+        "p50_tick_latency_ms": 2.26,
+        "p95_tick_latency_ms": 2.91,
+        "p99_tick_latency_ms": 3.09,
+        "meets_1s_sla": true,
+        "events_per_sec": 83.33
+      },
+      "100": {
+        "virtual_cities": 100,
+        "total_wards": 2000,
+        "p50_tick_latency_ms": 4.39,
+        "p95_tick_latency_ms": 5.85,
+        "p99_tick_latency_ms": 6.72,
+        "meets_1s_sla": true,
+        "events_per_sec": 166.67
+      }
+    }
+  }
+}

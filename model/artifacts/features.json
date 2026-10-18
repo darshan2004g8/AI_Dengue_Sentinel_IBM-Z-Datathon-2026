@@ -1,0 +1,18 @@
+[
+  "clinic_visits_7d_mean",
+  "clinic_visits_7d_change_pct",
+  "clinic_visits_zscore_28d",
+  "pharmacy_7d_mean",
+  "pharmacy_7d_change_pct",
+  "pharmacy_zscore_28d",
+  "rainfall_lag7",
+  "rainfall_lag14",
+  "rainfall_lag21",
+  "rainfall_14d_sum",
+  "rainfall_28d_sum",
+  "temp_7d_mean",
+  "humidity_7d_mean",
+  "sin_day_of_year",
+  "cos_day_of_year",
+  "completeness"
+]
