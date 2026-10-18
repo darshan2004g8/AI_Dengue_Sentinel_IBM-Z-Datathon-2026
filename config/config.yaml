@@ -1,0 +1,72 @@
+# Dengue Sentinel Configuration
+# Strict adherence to BUILD.md specifications
+
+system:
+  project_name: "Dengue Sentinel"
+  event_code: "SSF2026"
+  base_seed: 42
+
+data:
+  paths:
+    raw_weather: "data/raw/bengaluru_weather_2018_2025.csv"
+    raw_cases: "data/raw/filtered_data_SEARO_1792086539625.csv"
+    wards_geojson: "dashboard/assets/bbmp_wards.geojson"
+    events_dir: "data/processed/events"
+    ground_truth_dir: "data/processed/ground_truth"
+    official_dir: "data/processed/official"
+    manifest_csv: "data/processed/manifest.csv"
+    artifacts_dir: "model/artifacts"
+    results_doc: "docs/results.md"
+    results_metrics: "model/artifacts/metrics.json"
+
+generator:
+  total_seasons: 40
+  train_split: 0.70
+  val_split: 0.15
+  test_split: 0.15
+  control_seasons_count: 5
+  outbreaks_per_season_min: 3
+  outbreaks_per_season_max: 8
+  outbreak_ramp_days_min: 10
+  outbreak_ramp_days_max: 28
+  outbreak_multiplier_min: 3.0
+  outbreak_multiplier_max: 8.0
+  # Care pathway lags (days)
+  pharmacy_lag_min: 0
+  pharmacy_lag_max: 2
+  clinic_lag_min: 2
+  clinic_lag_max: 4
+  official_reporting_delay_days: 7
+  official_reporting_delay_range: [7, 14]
+  # Confounders
+  viral_fever_wave_probability: 1.0
+  random_spikes_per_season_max: 3
+
+model:
+  target_lead_window_days: 14
+  baseline_trailing_days: 28
+  baseline_guard_band_days: 2
+  baseline_zscore_threshold: 2.0
+  default_threshold_medium: 0.40
+  default_threshold_high: 0.70
+  target_false_alerts_per_100_ward_weeks: 5.0
+  # Persistence and cooldown
+  persistence_consecutive_days: 2
+  cooldown_hours: 72
+  downgrade_consecutive_days: 5
+  downgrade_margin: 0.05
+
+streaming:
+  default_speed: 5 # simulated days per second
+  kafka_broker: "localhost:9092"
+  signals_topic: "signals"
+  risk_scores_topic: "risk-scores"
+  fallback_csv: "data/processed/risk_scores_fallback.csv"
+
+respond:
+  default_teams: 5
+  min_teams: 1
+  max_teams: 15
+  inspection_effectiveness_r: 0.30
+  inspection_window_medium_hours: 72
+  inspection_window_high_hours: 48
